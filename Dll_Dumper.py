@@ -11,6 +11,7 @@ print("""
 ╚═════╝░╚══════╝╚══════╝  ╚═════╝░░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚══════╝╚═╝░░╚═╝
                                     Dll Dumper
                               Author 1ntrovertskrrt
+                    Github: https://github.com/1ntrovertskrrt
 """)
 
 print('Enter App Process Name \nExample = csgo.exe')
