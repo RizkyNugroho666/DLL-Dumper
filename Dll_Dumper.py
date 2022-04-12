@@ -47,7 +47,7 @@ while True:
 
         file = open('dllList.txt', 'w')
         for module in modules:
-            time.sleep(1)
+            time.sleep(0.5)
             global dllList
             dllList = print(str(Fore.WHITE + 'Collected '+module.name))
             dllList = file.write(str(module.name + '\n'))
