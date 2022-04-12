@@ -9,7 +9,7 @@ from pymem import *
 from colorama import Fore
 from pathlib import Path
 
-
+colorama.init()
 print(Fore.WHITE + """
 
 ██████╗░██╗░░░░░██╗░░░░░  ██████╗░██╗░░░██╗███╗░░░███╗██████╗░███████╗██████╗░
@@ -34,6 +34,7 @@ def main():
         pm = pymem.Pymem(gameProcess)
     except:
         print("Can't find the app process")
+        os.system('pause')
         return
 
     modules = list(pm.list_modules())
