@@ -1,5 +1,11 @@
 import pymem
+import win32api
 import time
+import os
+import subprocess
+
+from pymem import *
+from pathlib import Path
 
 print("""
 
@@ -14,14 +20,34 @@ print("""
                     Github: https://github.com/1ntrovertskrrt
 """)
 
-print('Enter App Process Name \nExample = csgo.exe')
-gameProcess = input("Input Game Process: ")
+def mainMenu():
+    print('Enter App Process Name \nExample = csgo.exe')
 
-pm = pymem.Pymem(gameProcess)
-modules = list(pm.list_modules())
-print('Collecting DLL Names')
-for module in modules:
-    time.sleep(1)
-    print(module.name)
+mainMenu()
 
-print('All dll files Successfully Dumped')
+def main():
+    try:
+        gameProcess = input("Input Game Process: ")
+        pm = pymem.Pymem(gameProcess)
+    except:
+        print("Can't find the app process")
+        return
+
+    modules = list(pm.list_modules())
+    print('Collecting DLL List...')
+    time.sleep(3)
+
+    file = open('dllList.txt', 'w')
+    for module in modules:
+        #time.sleep(1)
+        global dllList
+        dllList = print(str(module.name))
+        dllList = file.write(str(module.name + '\n'))
+    file.close()
+
+    print('All dll files Successfully Dumped')
+
+    os.system('pause')
+    os.startfile('dllList.txt')
+
+main()
