@@ -39,7 +39,7 @@ def main():
 
     file = open('dllList.txt', 'w')
     for module in modules:
-        #time.sleep(1)
+        time.sleep(1)
         global dllList
         dllList = print(str(module.name))
         dllList = file.write(str(module.name + '\n'))
