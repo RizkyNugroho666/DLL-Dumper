@@ -23,7 +23,9 @@ def Ascii():
                                     Dll Dumper
                               Author 1ntrovertskrrt
 """)
-print(Fore.BLUE + '                   Github: https://github.com/RizkyNugroho666\n')                    
+
+def github():
+    print(Fore.BLUE + '                   Github: https://github.com/RizkyNugroho666\n')                    
 
 def mainMenu():
     print(Fore.WHITE + 'Enter App Process Name \nExample = csgo.exe')
@@ -31,6 +33,7 @@ def mainMenu():
 while True:
     def main():
         Ascii()
+        github()
         mainMenu()
         try:
             gameProcess = input("Input App Process: ")
